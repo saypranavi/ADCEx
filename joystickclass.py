@@ -27,14 +27,19 @@ class Joystick:
     self.address = address
 
   def getX(self):
-    return self.pcf.read(0x40)
+    print(self.pcf.read(0x40))
+    # return self.pcf.read(0x40)
     
     
   def getY(self):
-    return self.pcf.read(0x41)
+    print(self.pcf.read(0x41))
+    # return self.pcf.read(0x41)
      
 
 while True:
   js = Joystick(0x48)
-  print('X = ', js.getX)
-  print('Y = ', js.getY)
+  js.getX()
+  js.getY()
+
+  # print('X = ', js.getX)
+  # print('Y = ', js.getY)
