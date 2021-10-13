@@ -1,6 +1,7 @@
 import smbus
 global address
 
+
 class PCF8591:
   # for RPI version 1, use "bus = smbus.SMBus(0)"
   bus = smbus.SMBus(1)
@@ -22,24 +23,16 @@ class PCF8591:
 class Joystick:
 
   def __init__(self, address):
-    self.bus = smbus.SMBus(1)
     self.pcf = PCF8591(address)
-    self.address = address
 
   def getX(self):
-    # print("X = ", type(self.pcf.read(0x40)))
-    return str(self.pcf.read(0x40))
-    
+    return self.pcf.read(0x40)
     
   def getY(self):
-    # print("Y = ", type(self.pcf.read(0x41)))
-    return str(self.pcf.read(0x41))
+    return self.pcf.read(0x41)
+  
      
-
 while True:
   js = Joystick(0x48)
-  # js.getX()
-  # js.getY()
-
   print('X = ', js.getX())
   print('Y = ', js.getY())
