@@ -18,17 +18,13 @@ class PCF8591:
           print ("Address: %s \n%s" % (self.address,e))
       return self.bus.read_byte(self.address)
 
-  # def write(self,val):
-  #     try:
-  #         self.bus.write_byte_data(self.address, 0x40, int(val))
-  #     except Exception as e:
-  #         print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-class Joystick(PCF8591):
+class Joystick:
 
   def _init_(self, address):
     self.pcf = PCF8591(address)
     self.bus = smbus.SMBus(1)
+    self.address = address
 
   def getX(self):
     return self.pcf.read(0x40)
