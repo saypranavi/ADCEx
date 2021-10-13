@@ -34,7 +34,8 @@ class Joystick:
      
 while True:
   js = Joystick(0x48)
-  print("%d" %js.getX(),", %d" %js.getY() )
+  #print("%d" %js.getX(),", %d" %js.getY() )
+  print(str(js.getX())+", "+ str(js.getY()))
   #print(js.getX(), ", " , js.getY() )
   # print('X = ', js.getX())
   # print('Y = ', js.getY())
