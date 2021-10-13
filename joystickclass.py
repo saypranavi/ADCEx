@@ -1,4 +1,5 @@
 import smbus
+global address
 
 class PCF8591:
   # for RPI version 1, use "bus = smbus.SMBus(0)"
@@ -23,7 +24,7 @@ class PCF8591:
   #     except Exception as e:
   #         print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-class Joystick:
+class Joystick(PCF8591):
 
   def _init_(self, address):
     self.pcf = PCF8591(address)
