@@ -30,12 +30,12 @@ class joystick:
     self.bus = smbus.SMBus(1)
 
   def getX(self):
-    X = self.pcf.read(0x40)
-    return(X)
+    return self.pcf.read(0x40)
+    
     
   def getY(self):
-    Y = self.pcf.read(0x41)
-    return(Y) 
+    return self.pcf.read(0x41)
+     
 
 while True:
   js = joystick(0x48)
