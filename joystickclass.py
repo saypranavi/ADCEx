@@ -27,12 +27,12 @@ class Joystick:
     self.address = address
 
   def getX(self):
-    print("X = ", type(self.pcf.read(0x40))
+    print("X = ", type(self.pcf.read(0x40)))
     # return self.pcf.read(0x40)
     
     
   def getY(self):
-    print("Y = ", type(self.pcf.read(0x41))
+    print("Y = ", type(self.pcf.read(0x41)))
     # return self.pcf.read(0x41)
      
 
