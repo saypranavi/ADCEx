@@ -23,7 +23,7 @@ class PCF8591:
   #     except Exception as e:
   #         print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 
-class joystick:
+class Joystick:
 
   def _init_(self, address):
     self.pcf = PCF8591(address)
@@ -38,6 +38,6 @@ class joystick:
      
 
 while True:
-  js = joystick(0x48)
+  js = Joystick(0x48)
   print('X = ', js.getX)
   print('Y = ', js.getY)
