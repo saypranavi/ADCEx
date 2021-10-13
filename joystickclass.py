@@ -38,6 +38,6 @@ class joystick:
     #return() 
 
 while True:
-  js = joystick(0x48)
+  js = joystick._init_(0x48)
   js.getX
   js.getY
