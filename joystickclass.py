@@ -5,7 +5,7 @@ class PCF8591:
   # for RPI version 1, use "bus = smbus.SMBus(0)"
   bus = smbus.SMBus(1)
   #check your PCF8591 address by type in 'sudo i2cdetect -y -1' in terminal.
-  def _init_(self, address):
+  def __init__(self, address):
     self.bus = smbus.SMBus(1)
     self.address = address
     #make an ADC var/obj
@@ -21,7 +21,7 @@ class PCF8591:
 
 class Joystick:
 
-  def _init_(self, address):
+  def __init__(self, address):
     self.bus = smbus.SMBus(1)
     self.pcf = PCF8591(address)
     self.address = address
