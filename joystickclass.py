@@ -22,8 +22,8 @@ class PCF8591:
 class Joystick:
 
   def _init_(self, address):
-    self.pcf = PCF8591(self,address)
     self.bus = smbus.SMBus(1)
+    self.pcf = PCF8591(address)
     self.address = address
 
   def getX(self):
