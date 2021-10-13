@@ -41,5 +41,5 @@ while True:
   # js.getX()
   # js.getY()
 
-  print('X = ', js.getX)
-  print('Y = ', js.getY)
+  print('X = ', js.getX())
+  print('Y = ', js.getY())
