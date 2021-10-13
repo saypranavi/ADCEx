@@ -1,5 +1,3 @@
-import PCF8591 as ADC
-import joystick as JS
+import joystickclass.py
 
-js = JS(0x48)
 

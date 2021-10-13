@@ -1,5 +1,7 @@
 import smbus
+import time
 global address
+
 
 #All from professor/kit code
 class PCF8591:
@@ -36,3 +38,4 @@ class Joystick:
 while True:
   js = Joystick(0x48) #create joystick with initial address
   print(js.getX()+", "+ js.getY()) #print X, Y
+  time.sleep(.1) #time delay 100 ms
